@@ -4,8 +4,8 @@ const router = express.Router();
 const {
   getAllUsers,
   postCreateUser,
-  //   putUpdateTodo,
-  //   deleteTodo,
+  putUpdateUser,
+  deleteUser,
 } = require("../controllers/user");
 
 /**
@@ -22,18 +22,18 @@ router.get("/", getAllUsers);
  */
 router.post("/", postCreateUser);
 
-// /**
-//  * @route PUT api/user/:id
-//  * @description update todo
-//  * @access public
-//  */
-// router.put("/:id", putUpdateTodo);
+/**
+ * @route PUT api/user/:id
+ * @description update user
+ * @access public
+ */
+router.put("/:id", putUpdateUser);
 
-// /**
-//  * @route DELETE api/todo/:id
-//  * @description delete todo
-//  * @access public
-//  */
-// router.delete("/:id", deleteTodo);
+/**
+ * @route DELETE api/user/:id
+ * @description delete user
+ * @access public
+ */
+router.delete("/:id", deleteUser);
 
 module.exports = router;
