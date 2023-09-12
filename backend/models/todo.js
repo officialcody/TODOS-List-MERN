@@ -2,11 +2,15 @@ const mongoose = require("mongoose");
 
 const TodoSchema = new mongoose.Schema({
   title: {
-    type: "String",
+    type: mongoose.Schema.Types.String,
     required: true,
   },
   description: {
-    type: "String",
+    type: mongoose.Schema.Types.String,
+  },
+  author_details: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "user",
   },
 });
 

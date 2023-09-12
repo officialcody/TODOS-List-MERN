@@ -35,3 +35,8 @@ exports.deleteTodo = (req, res) => {
       res.status(404).json({ message: "book not found", error: err.message })
     );
 };
+
+exports.getUserDetails = async (req, res) => {
+  const userDetails = await Todo.find().populate("author_details");
+  res.json(userDetails);
+};

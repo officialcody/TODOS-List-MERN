@@ -6,6 +6,7 @@ const {
   postCreateTodo,
   putUpdateTodo,
   deleteTodo,
+  getUserDetails,
 } = require("../controllers/todo");
 
 /**
@@ -35,5 +36,7 @@ router.put("/:id", putUpdateTodo);
  * @access public
  */
 router.delete("/:id", deleteTodo);
+
+router.get("/users", getUserDetails);
 
 module.exports = router;
